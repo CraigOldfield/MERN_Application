@@ -1,14 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-
 
 const items = require('./routes/api/items');
 
 const app = express();
 
-//Adding Bodyparser Middleware
-app.use(bodyParser.json());
+//Adding ability to parse the request body
+app.use(express.json());
 
 //Database Config File
 const db = require('./config/keys').mongoURI;
